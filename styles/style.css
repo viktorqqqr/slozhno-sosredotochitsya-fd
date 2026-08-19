@@ -1,5 +1,156 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  background-image: var(--page-bg-image);
+  line-height: var(--text-line-height);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--main-color);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  block-size: 100vh;
+  min-block-size: var(--cover-min-height, 668px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  place-items: center start;
+  padding: var(--global-padding);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.header__rec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  inset: var(--global-padding) calc(var(--global-padding) + 8px) auto auto;
+  color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 1.39;
+  text-transform: uppercase;
+}
+
+.header__rec::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  inset: var(--global-padding) var(--global-padding) auto auto;
+  border-top: 1px solid var(--heading-font-color);
+  border-right: 1px solid var(--heading-font-color);
+}
+
+.decorated-zone::after {
+  inset: auto auto var(--global-padding) var(--global-padding);
+  border-bottom: 1px solid var(--heading-font-color);
+  border-left: 1px solid var(--heading-font-color);
+}
+
+.header__theme-menu {
+  grid-row: 1;
+  place-self: center end;
+  color: var(--heading-font-color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 1.5px 12px 3px;
+  line-height: 1;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--border-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+  outline-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.cover-title {
+  color: var(--title-font-color);
+  font-weight: bold;
+  font-size: var(--title-font-size);
+  line-height: 0.83;
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  justify-self: end;
+  align-self: center;
+  font-weight: bold;
+}
+
+.content-section__title {
+  font-size: var(--font-size);
+  font-weight: bold;
+  color: var(--heading-font-color);
+  line-height: var(--text-line-height);
+}
+
+.title-decor {
+  font-size: var(--font-size);
+  font-weight: bold;
+  color: var(--subtitle-font-color);
+  background-color: var(--accent-color);
+}
+
+.content-section__text {
+  color: var(--primary-font-color);
+}
+
+.title-decor_regular {
+  font-weight: 400;
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  padding: 0 var(--global-padding) var(--global-padding);
+  block-size: 100vh;
+  min-block-size: var(-);
 }

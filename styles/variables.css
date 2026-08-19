@@ -1,3 +1,28 @@
+:root {
+  --cover-min-height: 668px;
+  --main-font: 'IBM Plex mono', monospace;
+  --font-size: 18px;
+  --global-padding: 10px;
+  --local-padding: 20px;
+  --text-line-height: 1.30;
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+
+  --page-bg-image: url("../images/cover-image-dark.png");
+  --main-color: #000028;
+  --accent-color: #ff0070;
+  --title-font-color: #db00ff;
+  --heading-font-color: var(--accent-color);
+  --subtitle-font-color: var(--main-color);
+  --primary-font-color: #F1B2CE;
+  --border-hover-color: #FF007066;
+}
+
+
+
+
+
+
+
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
