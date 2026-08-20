@@ -21,6 +21,7 @@
   grid-template-rows: 1fr min-content 1fr;
   place-items: center start;
   padding: var(--global-padding);
+  margin-block-end: var(--cover-margin);
 }
 
 .decorated-zone {
@@ -99,8 +100,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid currentColor;
-  outline-color: transparent;
+  border-bottom: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
@@ -147,10 +147,60 @@
   font-weight: 400;
 }
 
+.main {
+  display: grid;
+  gap: var(--sections-gap);
+  padding: 0 var(--global-padding);
+  margin-block-end: var(--cover-margin);
+}
+
+.content-section__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.content-section__link:hover {
+  text-decoration: underline;
+}
+
+.content-section__link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.content-section {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-auto-flow: row;
+  gap: var(--local-padding);
+  inline-size: 100%;
+}
+
+.content-section__card {
+  display: grid;
+  gap: 10px;
+}
+
+.content-section__list {
+  display: grid;
+  gap: var(--local-padding);
+}
+
+.gallery-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gallery-gap);
+}
+
+.gallery-section img {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
 .footer {
   display: grid;
   place-items: center;
-  padding: 0 var(--global-padding) var(--global-padding);
+  padding: var(--global-padding);
   block-size: 100vh;
-  min-block-size: var(-);
+  min-block-size: var(--cover-min-height);
 }

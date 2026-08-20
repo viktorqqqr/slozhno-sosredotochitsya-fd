@@ -4,6 +4,9 @@
   --font-size: 18px;
   --global-padding: 10px;
   --local-padding: 20px;
+  --cover-margin: 40px;
+  --sections-gap: 50px;
+  --gallery-gap: var(--global-padding);
   --text-line-height: 1.30;
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 
