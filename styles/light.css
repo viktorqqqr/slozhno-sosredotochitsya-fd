@@ -6,8 +6,30 @@
 
 :root.theme-light {
   --rec-display: none;
+  --page-bg-image: url("../images/cover-image-light.png");
+  --main-color: #fff1f7;
+  --accent-color: #FF8DCB;
+  --title-font-color: #FFC2E6;
+  --heading-font-color: #353430;
+  --subtitle-font-color: #353430;
+  --primary-font-color: #353430;
+  --border-hover-color: #32312D66;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --rec-display: none;
+    --page-bg-image: url("../images/cover-image-light.png");
+    --main-color: #fff1f7;
+    --accent-color: #FF8DCB;
+    --title-font-color: #FFC2E6;
+    --heading-font-color: #353430;
+    --subtitle-font-color: #353430;
+    --primary-font-color: #353430;
+    --border-hover-color: #32312D66;
+  }
 }

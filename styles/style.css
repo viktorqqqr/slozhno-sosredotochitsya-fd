@@ -29,7 +29,7 @@
 }
 
 .header__rec {
-  display: flex;
+  display: var(--rec-display, flex);
   align-items: center;
   gap: 10px;
   position: absolute;
@@ -123,6 +123,7 @@
   justify-self: end;
   align-self: center;
   font-weight: bold;
+  max-inline-size: 491px;
 }
 
 .content-section__title {
@@ -155,12 +156,14 @@
 }
 
 .content-section__link {
+  line-height: 1;
+  border-block-end: 1px solid transparent;
   text-decoration: none;
   text-shadow: 2px 2px var(--accent-color);
 }
 
 .content-section__link:hover {
-  text-decoration: underline;
+  border-block-end-color: currentColor;
 }
 
 .content-section__link:focus-visible {
@@ -178,6 +181,7 @@
 .content-section__card {
   display: grid;
   gap: 10px;
+  align-content: start;
 }
 
 .content-section__list {
@@ -203,4 +207,97 @@
   padding: var(--global-padding);
   block-size: 100vh;
   min-block-size: var(--cover-min-height);
+}
+
+@media (width >= 768px) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .header__title {
+    grid-column: 1 / -1;
+    margin-inline-start: calc(var(--global-padding) * -1);
+  }
+
+  .header__text {
+    grid-column: 2;
+  }
+
+  .content-section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content-section_why .content-section__card {
+    grid-column: 2;
+  }
+
+  .content-section_what .content-section__card {
+    grid-column: 1 / -1;
+  }
+
+  .content-section_how .content-section__title {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .content-section_how .content-section__list {
+    grid-column: 2;
+  }
+
+  .gallery-section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    grid-auto-flow: row dense;
+  }
+  
+  .gallery-section .content-section__subtitle {
+    grid-column: 1 / -1;
+  }
+
+  .gallery-section__image_sunset, 
+  .gallery-section__image_street {
+    grid-column: span 2;
+  }
+
+  .gallery-section__image_ice-cream, 
+  .gallery-section__image_tape {
+    grid-row: span 2;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    grid-column: 1 / -1;
+    place-self: start center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-section_why .content-section__card {
+    grid-column: 2 / -1;
+  }
+
+  .content-section_what .content-section__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .content-section_what .content-section__card {
+    grid-column: auto;
+    grid-row: 2;
+  }
+
+  .content-section_how .content-section__subtitle,  
+  .content-section_how .content-section__list {
+    grid-column: 2 / -1;
+  }
 }

@@ -20,12 +20,21 @@
   --border-hover-color: #FF007066;
 }
 
+@media (width >= 768px) {
+  :root {
+    --cover-min-height: 1024px;
+    --global-padding: 20px;
+    --cover-margin: 60px;
+    --sections-gap: 80px;
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
 
-
-
-
-
-
+@media (width >= 1024px) {
+  :root {
+    --cover-min-height: 768px;
+  }
+}
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
