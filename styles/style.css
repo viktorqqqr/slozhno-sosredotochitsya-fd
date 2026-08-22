@@ -201,7 +201,7 @@
 
 .gallery-section__item { 
     display: grid 
-  }
+}
 
 .gallery-section img {
   object-fit: cover;
