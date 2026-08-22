@@ -199,8 +199,8 @@
   gap: var(--gallery-gap);
 }
 
-.gallery-section__item { 
-  display: grid 
+.gallery-section__item {
+  display: grid;
 }
 
 .gallery-section img {
