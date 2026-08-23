@@ -295,12 +295,11 @@
   }
 
   .content-section_what .content-section__title {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 1;
   }
   .content-section_what .content-section__card {
     grid-column: auto;
-    grid-row: 2;
   }
 
   .content-section_how .content-section__subtitle,  
