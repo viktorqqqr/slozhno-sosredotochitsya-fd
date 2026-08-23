@@ -295,9 +295,15 @@
   }
 
   .content-section_what .content-section__title {
-    grid-column: 1 / -1;
-    grid-row: 1;
+    grid-column: 1;
   }
+
+  .content-section_what::before {
+  content: "";
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+
   .content-section_what .content-section__card {
     grid-column: auto;
   }
